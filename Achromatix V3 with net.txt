@@ -1849,14 +1849,13 @@ WingAnims.Jester=function()
 end
 
 WingAnims.Sussy=function()
-	mult=mult or 1
-	LWP1W.C0 = LWP1W.C0:lerp(CF.N(4,2,3)*CF.A(0,M.R(50+100*M.C(WingSine/15)),M.R(15+WingSine*mult)),1)
-	LWP2W.C0 = LWP2W.C0:lerp(CF.N(1,1,5)*CF.A(0,M.R(50+100*M.C(WingSine/15)),M.R(15+WingSine*mult)),1)
-	LWP3W.C0 = LWP3W.C0:lerp(CF.N(500,1.5,5)*CF.A(0,M.R(0+5*M.C(WingSine/15)),M.R(15+WingSine*mult)),.2)
+	LWP1W.C0 = LWP1W.C0:lerp(CF.N(3,0,-1)*CF.A(M.R(0+0*M.C(WingSine/32)),0,M.R(95)),.2)
+	LWP2W.C0 = LWP2W.C0:lerp(CF.N(2,-3,-1)*CF.A(M.R(0+0*M.C(WingSine/25)),0,M.R(1)),.2)
+	LWP3W.C0 = LWP3W.C0:lerp(CF.N(500,1.5,-1)*CF.A(M.R(15+20*M.C(WingSine/32)),0,M.R(120)),.2)
 	
-	RWP1W.C0 = RWP1W.C0:lerp(CF.N(4,2,3)*CF.A(0,M.R(50+100*M.C(WingSine/15)),M.R(15-WingSine*mult)),1)
-	RWP2W.C0 = RWP2W.C0:lerp(CF.N(1,1,5)*CF.A(0,M.R(50+100*M.C(WingSine/15)),M.R(15-WingSine*mult)),1)
-	RWP3W.C0 = RWP3W.C0:lerp(CF.N(500,1.5,5)*CF.A(0,M.R(0+5*M.C(WingSine/15)),M.R(15-WingSine*mult)),.2)
+	RWP1W.C0 = RWP1W.C0:lerp(CF.N(-500,1.5,-1)*CF.A(M.R(5+10*M.C(WingSine/32)),0,M.R(-60)),.2)
+	RWP2W.C0 = RWP2W.C0:lerp(CF.N(-500,1.5,-1)*CF.A(M.R(10+15*M.C(WingSine/32)),0,M.R(-90)),.2)
+	RWP3W.C0 = RWP3W.C0:lerp(CF.N(-500,1.5,-1)*CF.A(M.R(15+20*M.C(WingSine/32)),0,M.R(-120)),.2)
 end
 
 if(data.User==data.Local)then
@@ -1976,7 +1975,7 @@ while true do
 		elseif(Mode=='Overlord')then
 			local Alpha = .1
 			if(NeutralAnims)then	
-				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,6+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
+				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,7+.05*M.C(Sine/32),0)*CF.A(M.R(0+3*M.S(Sine/64)),0,0),Alpha)
 				if(M.RNG(1,45)==1)then
 					NK.C0 = NK.C0:lerp(NKC0*CF.A(M.RRNG(-25,25),M.RRNG(-25,25),M.RRNG(-25,25)),.8)
 				else
