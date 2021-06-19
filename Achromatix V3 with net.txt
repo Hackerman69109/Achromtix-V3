@@ -521,7 +521,7 @@ local modeInfo={
 	{Name="V I B E R",Walkspeed=16,moveVal=8,Font=Enum.Font.Arcade,StrokeColor=C3.N(.5,.5,.5);Music=2415462372,LeftWing={0,BrickColor.new'White'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'White'.Color,Enum.Material.Neon};WingAnim='Poke'};
 	{Name="+Nuclear+",Walkspeed=50,moveVal=12,Font=Enum.Font.Gotham,StrokeColor=C3.RGB(98,37,209);Music=1145101566,LeftWing={0,BrickColor.new'Lime green'.Color,Enum.Material.DiamondPlate};RightWing={0,BrickColor.new'Royal purple'.Color,Enum.Material.DiamondPlate};WingAnim='Crazy'};	
 	{Name="Happy :)",Walkspeed=14,moveVal=11,Font=Enum.Font.Arcade,StrokeColor=C3.RGB(255,152,220);Music=1030177093,LeftWing={0,BrickColor.new'Pink'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Pink'.Color,Enum.Material.Neon};WingAnim='Happy'};
-	{Name="FUCKING JOJO REFERENCE",Walkspeed=25,moveVal=6,Font=Enum.Font.Gotham,StrokeColor=C3.RGB(0,0,0);Music=4635400352,LeftWing={0,BrickColor.new'Gold'.Color,Enum.Material.Glass};RightWing={0,BrickColor.new'Gold'.Color,Enum.Material.Glass};WingAnim='Sussy'};	
+	{Name="Golden Experience",Walkspeed=25,moveVal=6,Font=Enum.Font.Gotham,StrokeColor=C3.RGB(0,0,0);Music=4635400352,LeftWing={0,BrickColor.new'Gold'.Color,Enum.Material.Glass};RightWing={0,BrickColor.new'Gold'.Color,Enum.Material.Glass};WingAnim='Sussy'};	
 	--MAJORS--
 	{Name="Lost Soul",Walkspeed=75,moveVal=20,Font=Enum.Font.Arcade,StrokeColor=C3.N(.2,.2,.2);Music=6074204488,LeftWing={0,BrickColor.new'Really black'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Dark stone grey'.Color,Enum.Material.Glass};WingAnim={'Lone',10}};
 	{Name="Destroyer-of-Worlds",Walkspeed=64,moveVal=10,Font=Enum.Font.Gotham,StrokeColor=C3.N(.4,.4,0);Music=5128935327,LeftWing={0,BrickColor.new'Gold'.Color,Enum.Material.Glass};RightWing={0,BrickColor.new'Gold'.Color,Enum.Material.Glass};WingAnim={'Swirl',10}};
@@ -1617,8 +1617,8 @@ UIS.InputBegan:connect(function(io,gpe)
 		changeMode'+Nuclear+'
 	elseif(io.KeyCode == Enum.KeyCode.Nine and Mode~='Happy :)')then 
 		changeMode'Happy :)'
-	elseif(io.KeyCode == Enum.KeyCode.Q and Mode~='FUCKING JOJO REFERENCE')then
-	    changeMode'FUCKING JOJO REFERENCE'
+	elseif(io.KeyCode == Enum.KeyCode.Q and Mode~='Golden Experience')then
+	    changeMode'Golden Experience'
 	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Achromatix')then 
 		changeMode'Lost Soul'
 	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Jack of All Trades')then 
@@ -2167,7 +2167,7 @@ while true do
 					RH.C0 = RH.C0:lerp(RHC0,Alpha)
 				end
 			end
-			elseif(Mode=='FUCKING JOJO REFERENCE')then
+			elseif(Mode=='Golden Experience')then
 	local Alpha = .1
 			if(NeutralAnims)then	
 				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,12+0.1*M.C(Sine/25),0)*CF.A(0,M.R(28),0),Alpha)
