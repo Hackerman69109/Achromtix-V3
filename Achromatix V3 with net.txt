@@ -507,6 +507,7 @@ Troublesome - Frostbite
 V I B E R
 +Nuclear+ - Radioactive
 Happy :) - ::Chill::
+MENACING
 ]]
 
 --2699922745
@@ -520,6 +521,7 @@ local modeInfo={
 	{Name="V I B E R",Walkspeed=16,moveVal=8,Font=Enum.Font.Arcade,StrokeColor=C3.N(.5,.5,.5);Music=2415462372,LeftWing={0,BrickColor.new'White'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'White'.Color,Enum.Material.Neon};WingAnim='Poke'};
 	{Name="+Nuclear+",Walkspeed=50,moveVal=12,Font=Enum.Font.Gotham,StrokeColor=C3.RGB(98,37,209);Music=1145101566,LeftWing={0,BrickColor.new'Lime green'.Color,Enum.Material.DiamondPlate};RightWing={0,BrickColor.new'Royal purple'.Color,Enum.Material.DiamondPlate};WingAnim='Crazy'};	
 	{Name="Happy :)",Walkspeed=14,moveVal=11,Font=Enum.Font.Arcade,StrokeColor=C3.RGB(255,152,220);Music=1030177093,LeftWing={0,BrickColor.new'Pink'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Pink'.Color,Enum.Material.Neon};WingAnim='Happy'};
+	{Name="FUCKING JOJO REFERENCE",Walkspeed=25,moveVal=6,Font=Enum.Font.Gotham,StrokeColor=C3.RGB(0,0,0);Music=4635400352,LeftWing={0,BrickColor.new'Gold'.Color,Enum.Material.Glass};RightWing={0,BrickColor.new'Gold'.Color,Enum.Material.Glass};WingAnim='Sussy'};	
 	--MAJORS--
 	{Name="Lost Soul",Walkspeed=75,moveVal=20,Font=Enum.Font.Arcade,StrokeColor=C3.N(.2,.2,.2);Music=6074204488,LeftWing={0,BrickColor.new'Really black'.Color,Enum.Material.Neon};RightWing={0,BrickColor.new'Dark stone grey'.Color,Enum.Material.Glass};WingAnim={'Lone',10}};
 	{Name="Destroyer-of-Worlds",Walkspeed=64,moveVal=10,Font=Enum.Font.Gotham,StrokeColor=C3.N(.4,.4,0);Music=5128935327,LeftWing={0,BrickColor.new'Gold'.Color,Enum.Material.Glass};RightWing={0,BrickColor.new'Gold'.Color,Enum.Material.Glass};WingAnim={'Swirl',10}};
@@ -1615,6 +1617,8 @@ UIS.InputBegan:connect(function(io,gpe)
 		changeMode'+Nuclear+'
 	elseif(io.KeyCode == Enum.KeyCode.Nine and Mode~='Happy :)')then 
 		changeMode'Happy :)'
+	elseif(io.KeyCode == Enum.KeyCode.Q and Mode~='FUCKING JOJO REFERENCE')then
+	    changeMode'FUCKING JOJO REFERENCE'
 	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Achromatix')then 
 		changeMode'Lost Soul'
 	elseif(io.KeyCode == Enum.KeyCode.T and Mode=='Jack of All Trades')then 
@@ -1842,6 +1846,17 @@ WingAnims.Jester=function()
 	RWP1W.C0 = RWP1W.C0:lerp(CF.N(-2,-2,-1)*CF.A(M.R(5+10*M.C(WingSine/32)),0,M.R(0-5*M.C(WingSine/32))),.2)
 	RWP2W.C0 = RWP2W.C0s:lerp(CF.N(-4.25,-1,-1+.05*M.S(WingSine/35))*CF.A(M.R(10+15*M.C(WingSine/32)),0,M.R(-15-7.5*M.C(WingSine/32))),.2)
 	RWP3W.C0 = RWP3W.C0:lerp(CF.N(-6.5,.5,-1)*CF.A(M.R(15+20*M.C(WingSine/32)),0,M.R(-30-9*M.C(WingSine/32))),.2)
+end
+
+WingAnims.Sussy=function()
+	mult=mult or 1
+	LWP1W.C0 = LWP1W.C0:lerp(CF.N(4,2,3)*CF.A(0,M.R(50+100*M.C(WingSine/15)),M.R(15+WingSine*mult)),1)
+	LWP2W.C0 = LWP2W.C0:lerp(CF.N(1,1,5)*CF.A(0,M.R(50+100*M.C(WingSine/15)),M.R(15+WingSine*mult)),1)
+	LWP3W.C0 = LWP3W.C0:lerp(CF.N(500,1.5,5)*CF.A(0,M.R(0+5*M.C(WingSine/15)),M.R(15+WingSine*mult)),.2)
+	
+	RWP1W.C0 = RWP1W.C0:lerp(CF.N(4,2,3)*CF.A(0,M.R(50+100*M.C(WingSine/15)),M.R(15-WingSine*mult)),1)
+	RWP2W.C0 = RWP2W.C0:lerp(CF.N(1,1,5)*CF.A(0,M.R(50+100*M.C(WingSine/15)),M.R(15-WingSine*mult)),1)
+	RWP3W.C0 = RWP3W.C0:lerp(CF.N(500,1.5,5)*CF.A(0,M.R(0+5*M.C(WingSine/15)),M.R(15-WingSine*mult)),.2)
 end
 
 if(data.User==data.Local)then
@@ -2152,6 +2167,23 @@ while true do
 					RH.C0 = RH.C0:lerp(RHC0,Alpha)
 				end
 			end
+			elseif(Mode=='FUCKING JOJO REFERENCE')then
+	local Alpha = .1
+			if(NeutralAnims)then	
+				RJ.C0 = RJ.C0:lerp(RJC0*CF.N(0,12+0.1*M.C(Sine/25),0)*CF.A(0,M.R(28),0),Alpha)
+				NK.C0 = NK.C0:lerp(NKC0*CF.A(M.R(-7-2.5*M.S(Sine/32)),M.R(-28),0),Alpha)
+				LS.C0 = LS.C0:lerp(LSC0*CF.N(0,0+.05*M.S(Sine/32),0)*CF.A(0,M.R(5+5*M.C(Sine/32)),M.R(-10-5*M.C(Sine/32))),Alpha)
+				RS.C0 = RS.C0:lerp(RSC0*CF.N(-.5,0+.05*M.S(Sine/32),-.6)*CF.A(M.R(-17),M.R(-20),M.R(-79+1*M.S(Sine/36))),Alpha)
+			end
+			if(legAnims)then 
+				if(NeutralAnims)then
+					LH.C0 = LH.C0:lerp(LHC0*CF.N(0,0-.05*M.C(Sine/32),0)*CF.A(0,0,M.R(-1)),Alpha)
+				RH.C0 = RH.C0:lerp(RHC0*CF.N(0,.5-.1*M.C(Sine/32),-.7)*CF.A(-.5,0,M.R(5)),Alpha)
+				else
+					LH.C0 = LH.C0:lerp(LHC0,Alpha)
+					RH.C0 = RH.C0:lerp(RHC0,Alpha)
+				end
+			end
 		elseif(Mode=='Lost Soul')then
 			local Alpha = .1
 			if(NeutralAnims)then
@@ -2211,7 +2243,9 @@ while true do
 				LH.C0 = LH.C0:lerp(LHC0,Alpha)
 				RH.C0 = RH.C0:lerp(RHC0,Alpha)
 			end
-		end
+			end
+	    
+
 	elseif(State == 'Walk')then
     
 		if(Mode=='The Chosen One')then
@@ -2356,8 +2390,6 @@ while true do
 end
 end
 end
-
-
 
 
 
